@@ -1,6 +1,9 @@
 class Api::V1::CardsController < ApplicationController
+  respond_to :json
+
   def index
-    render json: Card.all
+    cards = Card.all
+    render json: cards
   end
 
   def create
