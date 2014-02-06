@@ -9,6 +9,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('posts');
+  this.resource('cards', function() {
+    this.route('new');
+    this.route('show', {path: ':card_id'});
+    this.route('edit', {path: ':card_id/edit'});
+  });
 });
 
 export default Router;
