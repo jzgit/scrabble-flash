@@ -9,6 +9,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('quizzes', function() {
+    this.route('new');
+    this.route('show', {path: ':quiz_id'});
+    this.route('edit', {path: ':quiz_id/edit'});
+  });
   this.resource('cards', function() {
     this.route('show', {path: ':card_id'});
   });
