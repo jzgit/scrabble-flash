@@ -2,7 +2,7 @@ ScrabbleFlash::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :cards, except: [:new, :edit]
-      resources :posts, except: [:new, :edit]
+      resources :choices, except: [:new, :edit]
     end
   end
 
