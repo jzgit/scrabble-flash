@@ -4,12 +4,12 @@ class Api::V1::CardsController < ApplicationController
 
   # GET /cards
   def index
-    respond_with Card.all
+    render json: Card.all
   end
 
   # GET /cards/1
   def show
-    respond_with @card
+    respond_with Card.find(params[:id])
   end
 
   # POST /cards

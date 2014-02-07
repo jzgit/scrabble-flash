@@ -3,8 +3,6 @@ ScrabbleFlash::Application.routes.draw do
     namespace :v1 do
       resources :cards, except: [:new, :edit]
       resources :posts, except: [:new, :edit]
-      resources :cards
-      resources :options
     end
   end
 

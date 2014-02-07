@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206031843) do
+ActiveRecord::Schema.define(version: 20140206145400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20140206031843) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "choices", force: true do |t|
+    t.string   "word"
+    t.boolean  "correct"
+    t.integer  "card_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "choices", ["card_id"], name: "index_choices_on_card_id", using: :btree
 
   create_table "options", force: true do |t|
     t.string   "word"

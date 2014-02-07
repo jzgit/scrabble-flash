@@ -64,11 +64,11 @@ incorrect_words = %w{
 
 incorrect_words.each do |word|
   card = Card.find_or_create_by(letter: word[0])
-  card.options.find_or_create_by(word: word, correct: false)
+  card.choices.find_or_create_by(word: word, correct: false)
 end
 
 correct_words.each do |word|
   card = Card.find_or_create_by(letter: word[0])
-  card.options.find_or_create_by(word: word, correct: true)
+  card.choices.find_or_create_by(word: word, correct: true)
 end
 

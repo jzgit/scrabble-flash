@@ -1,5 +1,5 @@
 export default DS.Model.extend({
+  word: DS.attr('string'),
   correct: DS.attr('boolean'),
-  word:    DS.attr('string'),
-  card:    DS.belongsTo('card')
+  card: DS.belongsTo('card')
 });
