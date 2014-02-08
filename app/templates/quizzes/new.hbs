@@ -1,3 +1,13 @@
-<h3>New</h3>
+<h3>Quiz</h3>
 
-{{partial 'quizzes/form'}}
+<br />
+<br />
+{{#each shuffledCards}}
+  {{letter}}
+  {{#each shuffledChoices}}
+  <span {{bind-attr class="correct"}}>
+    {{word}}
+  </span>
+  {{/each}}
+<br />
+{{/each}}

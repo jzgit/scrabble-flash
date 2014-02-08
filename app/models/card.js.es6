@@ -1,4 +1,8 @@
 export default DS.Model.extend({
   letter:  DS.attr('string'),
-  choices: DS.hasMany('choice',{async: true})
+  choices: DS.hasMany('choice'),
+
+  shuffledChoices: function(){
+    return _.shuffle(this.get('choices.content'));
+  }.property()
 });

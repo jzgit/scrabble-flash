@@ -1,4 +1,5 @@
 //= require jquery
+//= require underscore-min
 //= require environment
 //= require ember-appkit
 //= require_self
