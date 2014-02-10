@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
 *:focus {
   outline: none;
 }
@@ -23,6 +24,13 @@
   display: inline-block;
   width: 60px;
   margin: 3px;
+  border: solid #e74c3c;
+  border-width: 0 0 2px 0;
+  &.is-selected {
+    border: solid white;
+    border-width: 0 0 2px 0;
+    background: #A5281B;
+  }
 }
 
 .main span {

@@ -4,7 +4,7 @@
     <h3>{{letter}}</h3>
     <div class="choices">
       {{#each shuffledChoices}}
-        <button class="choice">{{word}}</button>
+        <button {{action 'select' this}} {{bind-attr class=":choice isSelected"}}>{{word}}</button>
       {{/each}}
     </div>
     <div class="card-footer">
@@ -18,7 +18,6 @@
 
 <div class="main clearfix">
   <div class="column">
-    {{cardCount}}
     <p>Two Letter Scrabble Words Quiz</p>
     <p><span>select all the valid words on each card</span></p>
   </div>

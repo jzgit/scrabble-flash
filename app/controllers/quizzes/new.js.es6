@@ -5,6 +5,9 @@ export default Ember.ArrayController.extend({
   }.property(),
 
   actions: {
+    select: function(choice) {
+      choice.toggleProperty('isSelected');
+    },
     nextCard: function(card) {
       var cards = this.get('model.content');
       cards.pushObject(card.set('visible', false));
@@ -13,6 +16,7 @@ export default Ember.ArrayController.extend({
       }
       this.incrementProperty('cardCount');
     },
+
     startQuiz: function(card) {
       this.set('model.content', _.shuffle(this.get('model.content')));
       this.incrementProperty('cardCount');
