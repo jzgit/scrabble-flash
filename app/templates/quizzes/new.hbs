@@ -1,13 +1,30 @@
-<h3>Quiz</h3>
-
-<br />
-<br />
 {{#each shuffledCards}}
-  {{letter}}
-  {{#each shuffledChoices}}
-  <span {{bind-attr class="correct"}}>
-    {{word}}
-  </span>
-  {{/each}}
-<br />
+<div  {{bind-attr class=":md-modal :md-effect-2 visible:md-show"}}>
+  <div class="md-content">
+    <h3>{{letter}}</h3>
+    <div class="choices">
+      {{#each shuffledChoices}}
+        <button class="choice">{{word}}</button>
+      {{/each}}
+    </div>
+    <div class="card-footer">
+      <button {{action 'nextCard' this}} class="md-close">Next</button>
+    </div>
+  </div>
+</div>
 {{/each}}
+<div class="md-overlay"></div><!-- the overlay element -->
+
+
+<div class="main clearfix">
+  <div class="column">
+    {{cardCount}}
+    <p>Two Letter Scrabble Words Quiz</p>
+    <p><span>select all the valid words on each card</span></p>
+  </div>
+  <div class="column">
+    <button {{action 'startQuiz'}}>Start Quiz</button>
+  </div>
+</div>
+
+

@@ -1,18 +1,26 @@
-<h3>Index</h3>
+<div class="main clearfix">
+  <div class="column">
+    <p>Two Letter Scrabble Words Quiz</p>
+    <p><span>select all the valid words on each card</span></p>
+    <button {{action 'newQuiz'}} class="start-quiz">Start Quiz</button>
+  </div>
+  <div class="column">
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Duration</th>
+        <th>Score</th>
+      </tr>
+      {{#each}}
+        <tr>
+          <td>{{link-to id 'quizzes.show' this}}</td>
+          <td>{{duration}}</td>
+          <td>{{score}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
 
-<p>{{link-to 'New quiz' 'quizzes.new'}}</p>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>Duration</th>
-    <th>Score</th>
-  </tr>
-  {{#each}}
-    <tr>
-      <td>{{link-to id 'quizzes.show' this}}</td>
-      <td>{{duration}}</td>
-      <td>{{score}}</td>
-    </tr>
-  {{/each}}
-</table>
+

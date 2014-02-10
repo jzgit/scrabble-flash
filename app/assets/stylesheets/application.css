@@ -11,7 +11,28 @@
  *= require_self
  *= require_tree .
  */
+*:focus {
+  outline: none;
+}
 
 .correct {
   font-weight: bold;
+}
+
+.md-content .choices .choice {
+  display: inline-block;
+  width: 60px;
+  margin: 3px;
+}
+
+.main span {
+  font-size: 70%;
+}
+
+.start-quiz{
+  float: right;
+  margin-top: 10px;
+  &:focus {
+    outline: none;
+  }
 }
