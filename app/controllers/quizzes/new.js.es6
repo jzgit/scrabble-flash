@@ -10,10 +10,10 @@ export default Ember.ArrayController.extend({
     },
     nextCard: function(card) {
       var cards = this.get('model.content');
-      cards.pushObject(card.set('visible', false));
       if (this.get('cardCount') < 26 ) {
         cards.shiftObject().set('visible', true);
       }
+      cards.pushObject(card.set('visible', false));
       this.incrementProperty('cardCount');
     },
 

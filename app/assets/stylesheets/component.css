@@ -155,6 +155,7 @@ perspective effects (not including the modals and the overlay).
 	opacity: 1;
 }
 
+
 /* Effect 3: Slide from the bottom */
 .md-effect-3 .md-content {
 	-webkit-transform: translateY(20%);
